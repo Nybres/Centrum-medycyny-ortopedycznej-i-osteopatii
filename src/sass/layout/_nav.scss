@@ -1,3 +1,5 @@
+@use "../utilities/index" as *;
+
 nav {
 	height: 80px;
 	// background-color: rgb(136, 65, 65);
@@ -18,5 +20,16 @@ nav {
 	&__item {
 		padding: 0.5em;
 		text-decoration: none;
+	}
+}
+
+.test {
+	// background-color: $greenColor;
+	height: 100vh;
+	background-color: $greenColor;
+
+	@include medium {
+		display: block;
+		font-family: $secondaryFont;
 	}
 }
