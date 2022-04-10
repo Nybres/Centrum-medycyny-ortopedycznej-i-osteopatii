@@ -34,16 +34,67 @@ nav {
 		z-index: 99;
 
 		&--active {
+			// height: 100vh;
 			background-color: $greyColor;
 			transform: translateX(0%);
 			overflow: hidden;
 		}
 	}
 
+	&__nav-drop {
+		font-family: $secondaryFont;
+		font-size: 1rem;
+		list-style: none;
+		@include flex(column, flex-start);
+		margin-left: 0.5em;
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+		display: none;
+
+		&--active {
+			display: block;
+		}
+	}
+
+	&__link {
+		padding: 0.4em;
+		border-bottom: 1px solid $greenColor;
+		width: 65%;
+		text-align: left;
+		@include flex(column, flex-start, space-between);
+	}
+
+	&__link-drop {
+		padding: 0.2em;
+	}
+
+	&__link-drop-box {
+		width: 100%;
+		@include flex(row, center, space-between);
+	}
+
+	&__link:nth-last-child(3) {
+		border-bottom: none;
+		margin-bottom: 2.5em;
+	}
+
 	&__item {
-		padding: 0.5em;
+		padding: 0.2em;
 		text-decoration: none;
 		color: $blackColor;
+	}
+
+	&__social-box {
+		@include flex;
+		margin-top: 0.7em;
+
+		&-icon {
+			margin-right: 0.5em;
+		}
+
+		&-icon:last-child {
+			margin: 0;
+		}
 	}
 }
 
@@ -67,12 +118,6 @@ nav {
 		width: 45px;
 	}
 
-	&__box-bars {
-		height: 4px;
-		width: 100%;
-		background-color: $lightBlackColor;
-	}
-
 	&__box-bars::after,
 	&__box-bars::before {
 		position: absolute;
@@ -81,13 +126,31 @@ nav {
 		background-color: $blackColor;
 		height: 4px;
 		width: 100%;
+		transition: width 0.3s ease-in;
 	}
 
 	&__box-bars::after {
+		width: 100%;
 		top: 11px;
 	}
 
 	&__box-bars::before {
 		bottom: 4px;
+	}
+
+	&__box-bars {
+		height: 4px;
+		width: 100%;
+		background-color: $lightBlackColor;
+
+		&--active {
+			&::after {
+				width: 75%;
+			}
+
+			&::before {
+				width: 50%;
+			}
+		}
 	}
 }
