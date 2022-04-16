@@ -21,23 +21,36 @@ nav {
 
 	&__nav {
 		position: fixed;
-		top: 0;
+		top: 100px;
 		left: 0;
 		right: 0;
 		bottom: 0;
 		font-family: $secondaryFont;
 		font-size: $smallFont;
 		list-style: none;
-		@include flex(column);
 		transform: translateX(800%);
 		transition: transform 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 		z-index: 99;
 
+		@include lg {
+			position: relative;
+			transform: translateX(0%);
+			top: 0px;
+			width: 80%;
+		}
+
 		&--active {
 			// height: 100vh;
-			background-color: $greyColor;
+			background-color: $whiteColor;
 			transform: translateX(0%);
 			overflow: hidden;
+		}
+	}
+
+	&__nav-box {
+		@include flex(column);
+		@include lg {
+			@include flex(row, center, space-evenly);
 		}
 	}
 
@@ -62,10 +75,36 @@ nav {
 		width: 65%;
 		text-align: left;
 		@include flex(column, flex-start, space-between);
+		@include lg {
+			position: relative;
+			border-bottom: none;
+			width: auto;
+			padding: 1em 0.5em;
+		}
+	}
+
+	&__link:hover > &__nav-drop {
+		@include lg {
+			position: absolute;
+			display: inline-block;
+			margin-top: 3em;
+			background-color: red;
+			padding: 1em 0.5em;
+			border-radius: 8px;
+		}
+	}
+
+	&__link-icon {
+		@include lg {
+			display: none;
+		}
 	}
 
 	&__link-drop {
 		padding: 0.2em;
+		@include lg {
+			width: 200px;
+		}
 	}
 
 	&__link-drop-box {
@@ -76,6 +115,9 @@ nav {
 	&__link:nth-last-child(3) {
 		border-bottom: none;
 		margin-bottom: 2.5em;
+		@include lg {
+			margin-bottom: 0em;
+		}
 	}
 
 	&__item {
@@ -87,6 +129,9 @@ nav {
 	&__social-box {
 		@include flex;
 		margin-top: 0.7em;
+		@include lg {
+			margin: 0;
+		}
 
 		&-icon {
 			margin-right: 0.5em;
@@ -106,6 +151,10 @@ nav {
 	border: 1px solid transparent;
 	cursor: pointer;
 	z-index: 1000;
+
+	@include lg {
+		display: none;
+	}
 
 	&:focus {
 		border: 1px solid rgba(255, 255, 255, 0.5);
