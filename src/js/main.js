@@ -1,18 +1,27 @@
-const navigation = document.querySelector(".navigation__nav");
+const navigation = document.querySelector(".navigation__links");
 const navigationLinks = document.querySelectorAll(".navigation__link");
-const navigationDrop = document.querySelector(".navigation__nav-drop");
-const navigationDropdownIcon = document.querySelector(".navigation__link-icon");
+const navigationBox = document.querySelector(".navigation__box")
 const burgerBtn = document.querySelector(".burger-btn");
 const burgerBrnBars = document.querySelector(".burger-btn__box-bars");
+const dropDownMenu = document.querySelector(".navigation__links-dropdown");
+const dropdownArrow = document.querySelector(".navigation__link-icon");
 
-const handleNavigation = params => {
+const handleNavigation = () => {
 	burgerBrnBars.classList.toggle("burger-btn__box-bars--active");
-	navigation.classList.toggle("navigation__nav--active");
+	navigation.classList.toggle("navigation__links--active");
+	navigationBox.classList.toggle("navigation__box--active")
+
+	navigationLinks.forEach(link => {
+		link.addEventListener("click", () => {
+			// navigation.classList.remove("navigation__links--active");
+			// burgerBrnBars.classList.remove("burger-btn__box-bars--active");
+		});
+	});
 };
 
-const tests = params => {
-	navigationDrop.classList.toggle("navigation__nav-drop--active");
+const dropMenu = () => {
+	dropDownMenu.classList.toggle("navigation__links-dropdown--active");
 };
 
 burgerBtn.addEventListener("click", handleNavigation);
-navigationDropdownIcon.addEventListener("click", tests);
+dropdownArrow.addEventListener("click", dropMenu);

@@ -12,7 +12,13 @@
 	border-radius: 2em;
 	background-color: $greenColor;
 	font-family: $secondaryFont;
+	color: $whiteColor;
 	cursor: pointer;
+
+	&--cta {
+		padding: 1em 2em;
+		border-radius: 1em;
+	}
 
 	&--primary {
 		font-weight: 500;

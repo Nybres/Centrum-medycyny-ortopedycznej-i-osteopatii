@@ -1,67 +1,113 @@
 @use "../utilities/index" as *;
 
-nav {
-	height: 80px;
-	// background-color: rgb(136, 65, 65);
-}
-
 .navigation {
 	position: sticky;
 	top: 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1em;
-
-	&__logo-img {
-		position: relative;
-		padding: 0.2em 0em;
-		z-index: 101;
-	}
 
 	&__nav {
+		padding: 1em;
+		@include flex(row, center, space-between);
+	}
+
+	&__logo-img {
+		z-index: 100;
+	}
+
+	&__box {
 		position: fixed;
-		top: 100px;
-		left: 0;
+		top: 0;
 		right: 0;
-		bottom: 0;
-		font-family: $secondaryFont;
-		font-size: $smallFont;
-		list-style: none;
-		transform: translateX(800%);
-		transition: transform 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-		z-index: 99;
+		left: 0;
+		height: 100%;
+		background-color: $whiteColor;
+		transform: translate(200%);
+		transition: transform 0.2s ease-out;
+		z-index: -9999;
 
 		@include lg {
 			position: relative;
-			transform: translateX(0%);
-			top: 0px;
+			transform: translate(0%);
+			background: none;
 			width: 80%;
 		}
 
 		&--active {
-			// height: 100vh;
-			background-color: $whiteColor;
-			transform: translateX(0%);
-			overflow: hidden;
+			transform: translate(0%);
 		}
 	}
 
-	&__nav-box {
-		@include flex(column);
+	&__second-box {
+		position: relative;
+		padding: 10em 1em;
 		@include lg {
-			@include flex(row, center, space-evenly);
+			padding: 0;
 		}
 	}
 
-	&__nav-drop {
-		font-family: $secondaryFont;
-		font-size: 1rem;
+	&__third-box {
+		@include flex(column);
+		margin-top: 2em;
+		@include lg {
+			flex-direction: row;
+			margin: 0;
+		}
+	}
+
+	&__social-box {
+		margin-top: 1.5em;
+	}
+
+	&__links {
+		@include flex(column);
+		transform: translate(200%);
 		list-style: none;
-		@include flex(column, flex-start);
-		margin-left: 0.5em;
-		margin-top: 0.5em;
-		margin-bottom: 0.5em;
+		font-family: $secondaryFont;
+		transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+		z-index: 99;
+
+		@include lg {
+			position: relative;
+			transform: translate(0%);
+			@include flex();
+		}
+
+		&--active {
+			transform: translate(0%);
+		}
+	}
+
+	&__link {
+		padding: 0.6em 0.5em;
+		border-bottom: 1px solid #6ea324;
+		width: 60%;
+		@include flex(column, flex-start, flex-start);
+		@include lg {
+			width: auto;
+			border-bottom: none;
+		}
+	}
+
+	&__link:nth-last-child(2) {
+		border-bottom: none;
+	}
+
+	&__link-dropdown {
+		width: 100%;
+		@include flex(row, center, space-between);
+	}
+
+	&__single-link {
+		padding: 0.2em;
+		text-decoration: none;
+		font-size: 1.6rem;
+		color: $lightBlackColor;
+	}
+
+	&__links-dropdown {
+		@include flex(column);
+		list-style: none;
+		font-family: $secondaryFont;
+		padding: 1em 0em 0em 1em;
 		display: none;
 
 		&--active {
@@ -69,77 +115,14 @@ nav {
 		}
 	}
 
-	&__link {
-		padding: 0.4em;
-		border-bottom: 1px solid $greenColor;
-		width: 65%;
-		text-align: left;
-		@include flex(column, flex-start, space-between);
-		@include lg {
-			position: relative;
-			border-bottom: none;
-			width: auto;
-			padding: 1em 0.5em;
-		}
-	}
-
-	&__link:hover > &__nav-drop {
-		@include lg {
-			position: absolute;
-			display: inline-block;
-			margin-top: 3em;
-			background-color: red;
-			padding: 1em 0.5em;
-			border-radius: 8px;
-		}
-	}
-
-	&__link-icon {
-		@include lg {
-			display: none;
-		}
-	}
-
 	&__link-drop {
-		padding: 0.2em;
-		@include lg {
-			width: 200px;
-		}
+		padding: 0.4em;
 	}
 
-	&__link-drop-box {
-		width: 100%;
-		@include flex(row, center, space-between);
-	}
-
-	&__link:nth-last-child(3) {
-		border-bottom: none;
-		margin-bottom: 2.5em;
-		@include lg {
-			margin-bottom: 0em;
-		}
-	}
-
-	&__item {
-		padding: 0.2em;
+	&__single-link-drop {
+		color: $lightBlackColor;
+		font-size: 1rem;
 		text-decoration: none;
-		color: $blackColor;
-	}
-
-	&__social-box {
-		@include flex;
-		margin-top: 0.7em;
-		@include lg {
-			margin: 0;
-		}
-
-		&-icon {
-			margin-right: 0.5em;
-		}
-
-		&-icon:last-child {
-			margin: 0;
-		}
 	}
 }
 
