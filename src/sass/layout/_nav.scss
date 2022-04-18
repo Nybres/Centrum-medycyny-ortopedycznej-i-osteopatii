@@ -1,128 +1,145 @@
 @use "../utilities/index" as *;
 
-.navigation {
-	position: sticky;
-	top: 0;
+.navbar {
+	height: 80px;
+	padding: 1em;
 
-	&__nav {
-		padding: 1em;
+	&__logo {
+		z-index: 80;
+	}
+
+	&__navigation {
 		@include flex(row, center, space-between);
+		@include lg {
+			justify-content: space-around;
+		}
 	}
 
-	&__logo-img {
-		z-index: 100;
-	}
-
-	&__box {
+	&__container {
 		position: fixed;
-		top: 0;
-		right: 0;
+		top: 0px;
 		left: 0;
-		height: 100%;
-		background-color: $whiteColor;
+		right: 0;
+		height: 100vh;
 		transform: translate(200%);
-		transition: transform 0.2s ease-out;
-		z-index: -9999;
-
+		transition: transform 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+		// overflow: scroll;
+		@include flex(column);
 		@include lg {
 			position: relative;
 			transform: translate(0%);
-			background: none;
-			width: 80%;
+			flex-direction: row;
+			height: auto;
+			// overflow: hidden;
+			width: 70%;
 		}
 
 		&--active {
 			transform: translate(0%);
+			background-color: $whiteColor;
 		}
 	}
 
-	&__second-box {
-		position: relative;
-		padding: 10em 1em;
-		@include lg {
-			padding: 0;
-		}
-	}
-
-	&__third-box {
+	&__menu {
 		@include flex(column);
-		margin-top: 2em;
+		font-family: $secondaryFont;
+		font-weight: 400;
+		list-style: none;
+		font-size: $smallFont;
+		margin-bottom: 1em;
+		width: 100%;
 		@include lg {
 			flex-direction: row;
 			margin: 0;
 		}
 	}
 
-	&__social-box {
-		margin-top: 1.5em;
-	}
-
-	&__links {
-		@include flex(column);
-		transform: translate(200%);
-		list-style: none;
-		font-family: $secondaryFont;
-		transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-		z-index: 99;
-
-		@include lg {
-			position: relative;
-			transform: translate(0%);
-			@include flex();
-		}
-
-		&--active {
-			transform: translate(0%);
-		}
-	}
-
-	&__link {
-		padding: 0.6em 0.5em;
-		border-bottom: 1px solid #6ea324;
-		width: 60%;
+	&__menu-item {
+		position: relative;
 		@include flex(column, flex-start, flex-start);
+		width: 60%;
+		padding: 0.2em;
+		border-bottom: 1px solid $greenColor;
 		@include lg {
-			width: auto;
-			border-bottom: none;
+			justify-content: space-around;
+			align-items: center;
+			width: 100%;
+			border: none;
+			padding: 0.3em;
 		}
 	}
 
-	&__link:nth-last-child(2) {
-		border-bottom: none;
-	}
-
-	&__link-dropdown {
-		width: 100%;
-		@include flex(row, center, space-between);
-	}
-
-	&__single-link {
-		padding: 0.2em;
-		text-decoration: none;
-		font-size: 1.6rem;
-		color: $lightBlackColor;
-	}
-
-	&__links-dropdown {
-		@include flex(column);
-		list-style: none;
-		font-family: $secondaryFont;
-		padding: 1em 0em 0em 1em;
-		display: none;
-
-		&--active {
+	@include lg {
+		&__menu-item:hover > &__sub-menu {
 			display: block;
 		}
 	}
 
-	&__link-drop {
-		padding: 0.4em;
+	&__menu-item:nth-last-child(1) {
+		border-bottom: none;
 	}
 
-	&__single-link-drop {
-		color: $lightBlackColor;
-		font-size: 1rem;
+	&__link {
 		text-decoration: none;
+		color: $lightBlackColor;
+		padding: 0.2em;
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: $greenColor;
+		}
+	}
+
+	&__link-icon {
+		margin-left: 0.2em;
+	}
+
+	&__sub-box {
+		width: 100%;
+		@include flex(row, center, space-between);
+	}
+
+	&__sub-menu {
+		display: none;
+		list-style: none;
+		padding: 0.5em 0em 0em 1em;
+		font-size: $smallestFont;
+		background-color: red;
+
+		@include lg {
+			position: absolute;
+			top: 40px;
+		}
+
+		&--active {
+			display: inline-block;
+		}
+	}
+
+	&__sub-item {
+		padding: 0.2em;
+	}
+
+	&__box {
+		@include flex(column);
+		@include lg {
+			flex-direction: row;
+			justify-content: space-evenly;
+			width: 70%;
+		}
+	}
+
+	&__social-box {
+		margin-top: 1.5em;
+		@include lg {
+			@include flex(row);
+			margin: 0;
+			margin-left: 1em;
+		}
+	}
+
+	&__social-box-icon {
+		margin: 0.2em 0.4em;
 	}
 }
 
