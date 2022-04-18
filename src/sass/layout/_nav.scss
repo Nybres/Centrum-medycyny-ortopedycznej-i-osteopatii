@@ -1,8 +1,12 @@
 @use "../utilities/index" as *;
 
 .navbar {
+	position: sticky;
+	top: 0;
+	background-color: $whiteColor;
 	height: 80px;
 	padding: 1em;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
 
 	&__logo {
 		z-index: 80;
@@ -23,20 +27,20 @@
 		height: 100vh;
 		transform: translate(200%);
 		transition: transform 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
-		// overflow: scroll;
-		@include flex(column);
+		z-index: 999;
 		@include lg {
 			position: relative;
+			@include flex(row);
 			transform: translate(0%);
-			flex-direction: row;
 			height: auto;
-			// overflow: hidden;
 			width: 70%;
 		}
 
 		&--active {
 			transform: translate(0%);
+			top: 80px;
 			background-color: $whiteColor;
+			overflow-y: scroll;
 		}
 	}
 
@@ -104,11 +108,13 @@
 		list-style: none;
 		padding: 0.5em 0em 0em 1em;
 		font-size: $smallestFont;
-		background-color: red;
 
 		@include lg {
 			position: absolute;
-			top: 40px;
+			top: 50px;
+			padding: 1em 1em;
+			box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+			width: 250px;
 		}
 
 		&--active {
@@ -117,7 +123,10 @@
 	}
 
 	&__sub-item {
-		padding: 0.2em;
+		padding: 0.3em 0.2em;
+		@include lg {
+			padding: 0.4em 0.2em;
+		}
 	}
 
 	&__box {
@@ -131,6 +140,7 @@
 
 	&__social-box {
 		margin-top: 1.5em;
+		cursor: pointer;
 		@include lg {
 			@include flex(row);
 			margin: 0;
