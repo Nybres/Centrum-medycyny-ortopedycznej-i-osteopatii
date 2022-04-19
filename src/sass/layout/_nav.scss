@@ -3,10 +3,15 @@
 .navbar {
 	position: sticky;
 	top: 0;
-	background-color: $whiteColor;
 	height: 80px;
+	background-color: $whiteColor;
 	padding: 1em;
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+	z-index: 1;
+	@include lg {
+		background-color: transparent;
+		box-shadow: none;
+	}
 
 	&__logo {
 		z-index: 80;
@@ -33,7 +38,7 @@
 			@include flex(row);
 			transform: translate(0%);
 			height: auto;
-			width: 70%;
+			width: 100%;
 		}
 
 		&--active {
@@ -45,11 +50,11 @@
 	}
 
 	&__menu {
-		@include flex(column);
+		@include flex(column, center, flex-end);
 		font-family: $secondaryFont;
 		font-weight: 400;
 		list-style: none;
-		font-size: $smallFont;
+		font-size: 1.1rem;
 		margin-bottom: 1em;
 		width: 100%;
 		@include lg {
@@ -67,9 +72,9 @@
 		@include lg {
 			justify-content: space-around;
 			align-items: center;
-			width: 100%;
+			width: auto;
 			border: none;
-			padding: 0.3em;
+			padding: 0.6em;
 		}
 	}
 
@@ -87,6 +92,7 @@
 		text-decoration: none;
 		color: $lightBlackColor;
 		padding: 0.2em;
+		width: 100%;
 		transition: color 0.3s ease;
 
 		&:hover {
@@ -95,7 +101,8 @@
 	}
 
 	&__link-icon {
-		margin-left: 0.2em;
+		margin-left: 0.1em;
+		fill: $lightBlackColor;
 	}
 
 	&__sub-box {
@@ -115,6 +122,7 @@
 			padding: 1em 1em;
 			box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
 			width: 250px;
+			background-color: $whiteColor;
 		}
 
 		&--active {
@@ -144,12 +152,12 @@
 		@include lg {
 			@include flex(row);
 			margin: 0;
-			margin-left: 1em;
 		}
 	}
 
 	&__social-box-icon {
 		margin: 0.2em 0.4em;
+		fill: $blueColor;
 	}
 }
 
