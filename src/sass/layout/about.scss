@@ -1,0 +1,57 @@
+@use "../utilities/index" as *;
+
+.about {
+	position: relative;
+	padding: 4em 1em;
+	margin-top: 2em;
+	// background-color: gold;
+
+	&__container {
+		@include flex(column);
+		@include md {
+			flex-direction: row;
+		}
+	}
+
+	&__box {
+		@include flex(column-reverse);
+	}
+
+	&__box-paragraph {
+		font-family: $primaryFont;
+		font-size: $smallestFont;
+		color: $lightBlackColor;
+		text-align: justify;
+		margin-bottom: 1.5em;
+	}
+
+	&__box-image {
+		overflow: hidden;
+		border-radius: 0.5em;
+		width: 100%;
+		margin-bottom: 1.5em;
+	}
+
+	&__cards {
+		@include flex();
+		width: 100%;
+	}
+
+	&__card {
+		background: $greenGradient;
+		width: calc(50% - 1em);
+		margin: 0.5em;
+		padding: 2em 1em;
+		// height: 100%;
+		border-radius: 1em;
+
+		&-body {
+			@include flex(column);
+			height: 100%;
+		}
+
+		&-title {
+			// text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+		}
+	}
+}

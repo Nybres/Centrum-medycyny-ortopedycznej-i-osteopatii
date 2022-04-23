@@ -19,6 +19,10 @@
 		padding: 1em 2em;
 		border-radius: 1em;
 		box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+		@include lg {
+			padding: 1.1em 2.2em;
+			font-size: 1.1rem;
+		}
 	}
 
 	&--primary {
@@ -28,3 +32,24 @@
 	}
 }
 
+.title {
+	@include flex(column,flex-start,flex-start);
+	margin-bottom: 1.5em;
+	&__first {
+		position: relative;
+		font-family: $secondaryFont;
+		font-size: $mediumestFont;
+		color: $lightBlackColor;
+		font-weight: 500;
+		text-transform: uppercase;
+		padding-left: 0.5em;
+		margin-bottom: 0.2em;
+		border-left: 5px solid $blueColor;
+	}
+
+	&__second {
+		font-family: $primaryFont;
+		font-size: $smallestFont;
+		color: $greenColor;
+	}
+}
