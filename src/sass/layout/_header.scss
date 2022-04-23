@@ -1,51 +1,86 @@
 @use "../utilities/index" as *;
 .header {
 	position: relative;
-	// height: 100vh;
-	height: calc(100vh - 80px);
+	@include lg {
+		position: static;
+		height: 70vh;
+	}
 
 	&__background {
 		position: absolute;
-		// top: 80px;
 		top: 0;
 		right: 0;
-		height: 100vh;
+		height: 90vh;
 		width: 100%;
 		background-image: $greenGradient,
 			url("../img/home_page/header_image_mobile.jpg");
-		// border-radius: 0px 800px 0px 0px;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: 0% 20%;
 		z-index: -99;
+
+		@include lg {
+			width: 53%;
+			border-radius: 0px 0px 0px 800px;
+			height: 80vh;
+		}
 	}
 
 	&__container {
-		padding: 10em 2em;
+		// padding: 4em 2em;
+		padding: 2em 1em 0em 1em;
 		@include flex(column);
+		@include md {
+			flex-direction: row;
+			height: 70vh;
+		}
 	}
 
 	&__box-text {
+		order: 2;
+		padding-bottom: 2em;
 		@include flex(column);
+		@include md {
+			width: 40%;
+			align-items: flex-start;
+			padding: 1em;
+		}
+	}
+
+	&__box-image {
+		overflow: hidden;
+		@include flex();
+	}
+
+	&__box-image-persons {
+		height: 222px;
 	}
 
 	&__tittle {
 		font-size: $mediumestFont;
 		font-weight: 700;
-		text-align: center;
 		text-transform: uppercase;
-		margin-bottom: 1em;
+		margin: 0.8em 0em;
+		text-align: center;
+
+		@include lg {
+			text-align: left;
+		}
 	}
 
 	&__highlight {
-		color: $blueColor;
+		color: $whiteColor;
+		@include lg {
+			color: $blueColor;
+		}
 	}
 
 	&__paragraph {
+		font-family: $primaryFont;
 		font-size: $smallestFont;
 		text-align: justify;
 		color: $blackColor;
-		margin-bottom: 2em;
+		margin-bottom: 1.2em;
 	}
 
 	&__arrow {
@@ -111,6 +146,7 @@
 }
 
 .zap {
+	position: relative;
 	height: 500px;
 	background-color: gold;
 }
