@@ -33,8 +33,11 @@
 }
 
 .title {
-	@include flex(column,flex-start,flex-start);
+	@include flex(column, flex-start, flex-start);
 	margin-bottom: 1.5em;
+	@include xl {
+		margin-bottom: 2em;
+	}
 	&__first {
 		position: relative;
 		font-family: $secondaryFont;
@@ -45,11 +48,19 @@
 		padding-left: 0.5em;
 		margin-bottom: 0.2em;
 		border-left: 5px solid $blueColor;
+
+		@include xl {
+			font-size: $mediumFont;
+		}
 	}
 
 	&__second {
 		font-family: $primaryFont;
 		font-size: $smallestFont;
 		color: $greenColor;
+
+		@include xl {
+			font-size: $smallFont;
+		}
 	}
 }
