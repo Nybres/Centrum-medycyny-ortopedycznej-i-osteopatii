@@ -115,10 +115,12 @@
 		list-style: none;
 		padding: 0.5em 0em 0em 1em;
 		font-size: $smallestFont;
+		
 
 		@include lg {
 			position: absolute;
 			top: 50px;
+			left: 2px;
 			padding: 1em 1em;
 			box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
 			width: 250px;

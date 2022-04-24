@@ -6,12 +6,22 @@
 		padding: 6em 1em;
 	}
 	@include lg {
-		padding: 6em 2em 0em 2em;
+		padding: 6em 2em;
+		&::after {
+			content: "";
+			position: absolute;
+			background-color: whitesmoke;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: -1000;
+		}
 	}
 	@include xl {
 		padding: 8em 2em 0em 2em;
 		height: 60vh;
-		min-height: 450px;
+		min-height: 550px;
 		max-height: 600px;
 	}
 
@@ -89,8 +99,9 @@
 	}
 
 	&__tittle {
+		font-family: $secondaryFont;
 		font-size: $mediumestFont;
-		font-weight: 700;
+		font-weight: 500;
 		text-transform: uppercase;
 		margin: 0.8em 0em;
 		text-align: center;
@@ -130,4 +141,3 @@
 		}
 	}
 }
-

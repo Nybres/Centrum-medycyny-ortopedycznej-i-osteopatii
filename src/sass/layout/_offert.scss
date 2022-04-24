@@ -1,0 +1,95 @@
+@use "../utilities/index" as *;
+
+.offert {
+	position: relative;
+	padding: 6em 2em;
+	background-color: $greyColor;
+
+	@include lg {
+		padding: 8em 2em;
+	}
+
+	&__cards {
+		@include flex(column);
+		align-items: normal;
+		width: 100%;
+		@include md {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__card-image {
+		overflow: hidden;
+		width: 100%;
+		height: 220px;
+		border-radius: 0.5em 0.5em 0em 0em;
+		@include lg {
+			height: 333px;
+		}
+		@include xl {
+			height: 240px;
+		}
+	}
+
+	&__card {
+		@include flex(column);
+		width: 100%;
+		padding: 0em 1em;
+		margin: 1.5em 0em;
+		overflow: hidden;
+		@include md {
+			width: 50%;
+		}
+		@include xl {
+			width: 25%;
+		}
+
+		&-body {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			background-color: $whiteColor;
+			padding: 2em;
+			@include md {
+				height: 80%;
+			}
+			@include lg {
+				height: 60%;
+			}
+			@include xl {
+				height: 80%;
+			}
+		}
+
+		&-title {
+			color: $greenColor;
+			font-family: $secondaryFont;
+			font-size: 1.2rem;
+			font-weight: 500;
+			margin-bottom: 0.5em;
+
+			@include lg {
+				font-size: 1.4rem;
+			}
+		}
+
+		&-paragraph {
+			color: $greyTextColor;
+			font-size: $smallestFont;
+			margin-bottom: 1em;
+			@include lg {
+				font-size: 1.2rem;
+			}
+		}
+
+		&-more {
+			text-transform: uppercase;
+			text-decoration: none;
+			font-size: $smallestFont;
+			font-weight: 600;
+			color: $blueColor;
+			margin-top: auto;
+		}
+	}
+}
