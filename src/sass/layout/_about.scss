@@ -74,7 +74,9 @@
 
 	&__card {
 		// background: $greenGradient;
-		background-color: $lightGreenColor;
+		background-image: $greenGradient,
+			url("../img/home_page/about_card_image.jpg");
+		background-position: 35% 85%;
 		width: calc(50% - 1em);
 		margin: 0.5em;
 		padding: 0em 1em;
