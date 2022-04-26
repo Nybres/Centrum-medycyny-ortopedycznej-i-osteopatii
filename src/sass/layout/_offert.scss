@@ -24,6 +24,7 @@
 		width: 100%;
 		height: 220px;
 		border-radius: 0.5em 0.5em 0em 0em;
+		object-fit: cover;
 		@include lg {
 			height: 333px;
 		}
@@ -34,15 +35,14 @@
 
 	&__card {
 		@include flex(column);
-		width: 100%;
-		padding: 0em 1em;
-		margin: 1.5em 0em;
+		margin: 1.5em 1em;
+		box-shadow: rgb(237 238 239) 0px 0px 10px 4px;
 		overflow: hidden;
 		@include md {
-			width: 50%;
+			width: calc(50% - 2em);
 		}
 		@include xl {
-			width: 25%;
+			width: calc(25% - 2em);
 		}
 
 		&-body {
