@@ -1,0 +1,86 @@
+@use "../utilities/index" as *;
+.invate {
+	position: relative;
+	padding: 6em 2em;
+
+	@include lg {
+		padding: 8em 2em;
+	}
+
+	&__cards {
+		@include flex(column);
+
+		@include md {
+			flex-wrap: wrap;
+			flex-direction: row;
+		}
+	}
+
+	&__card-image {
+		overflow: hidden;
+		width: 100%;
+		height: 220px;
+		border-radius: 0.5em 0.5em 0em 0em;
+		object-fit: cover;
+		@include lg {
+			height: 333px;
+		}
+	}
+
+	&__card {
+		@include flex(column);
+		margin: 1.5em 1em;
+		box-shadow: rgb(237 238 239) 0px 0px 10px 4px;
+		overflow: hidden;
+		@include md {
+			width: calc(50% - 2em);
+		}
+
+		&-body {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			background-color: $whiteColor;
+			padding: 2em;
+			@include md {
+				height: 80%;
+			}
+		}
+
+		&-title {
+			color: $greenColor;
+			font-family: $secondaryFont;
+			font-size: 1.4rem;
+			font-weight: 500;
+			margin-bottom: 0.5em;
+
+			@include lg {
+				font-size: 1.4rem;
+			}
+		}
+
+		&-paragraph {
+			color: $greyTextColor;
+			font-size: $smallestFont;
+			margin-bottom: 1em;
+            text-align: justify;
+			@include lg {
+				font-size: 1.1rem;
+			}
+		}
+
+		&-more {
+			text-transform: uppercase;
+			text-decoration: none;
+			font-size: $smallestFont;
+			font-weight: 600;
+			color: $blueColor;
+			margin-top: auto;
+			transition: color 0.3s ease-in;
+
+			&:hover {
+				color: $greenColor;
+			}
+		}
+	}
+}

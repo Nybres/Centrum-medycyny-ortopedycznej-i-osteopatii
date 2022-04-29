@@ -71,9 +71,11 @@
 	@include flex(column, flex-start, flex-start);
 	margin-bottom: 1.5em;
 
-	&--center {
-		align-items: center;
-		justify-content: center;
+	@include md {
+		&--center {
+			align-items: center;
+			justify-content: center;
+		}
 	}
 
 	@include xl {
@@ -103,6 +105,43 @@
 
 		@include xl {
 			font-size: $smallFont;
+		}
+	}
+}
+
+.cta {
+	&__container {
+		@include flex(column);
+	}
+
+	&__title {
+		font-family: $secondaryFont;
+		font-size: $smallFont;
+		color: $whiteColor;
+		font-weight: 500;
+		margin-bottom: 0.8em;
+
+		@include md {
+			font-size: $mediumFont;
+		}
+
+		@include lg {
+			font-size: $largeFont;
+			margin-bottom: 0.5em;
+		}
+	}
+
+	&__paragraph {
+		font-size: $smallestFont;
+		color: $whiteColor;
+		margin-bottom: 1.5em;
+
+		@include md {
+			text-align: center;
+			font-size: 1.4rem;
+		}
+		@include lg {
+			margin-bottom: 1.2em;
 		}
 	}
 }
