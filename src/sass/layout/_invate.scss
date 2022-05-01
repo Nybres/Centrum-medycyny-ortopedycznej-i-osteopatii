@@ -9,6 +9,7 @@
 
 	&__cards {
 		@include flex(column);
+		padding-bottom: 6em;
 
 		@include md {
 			flex-wrap: wrap;
@@ -44,6 +45,10 @@
 			padding: 2em;
 			@include md {
 				height: 80%;
+				padding: 3em;
+			}
+			@include xxl {
+				padding: 4em;
 			}
 		}
 
@@ -57,13 +62,16 @@
 			@include lg {
 				font-size: 1.4rem;
 			}
+			@include xl {
+				font-size: 1.6rem;
+			}
 		}
 
 		&-paragraph {
 			color: $greyTextColor;
 			font-size: $smallestFont;
 			margin-bottom: 1em;
-            text-align: justify;
+			text-align: justify;
 			@include lg {
 				font-size: 1.1rem;
 			}
