@@ -32,10 +32,11 @@
 	}
 
 	&__box {
-		@include flex(column, flex-start);
+		@include flex(column);
 		width: 100%;
 
 		&-links {
+			@include flex(column);
 			font-size: $smallestFont;
 			list-style: none;
 			margin-bottom: 1em;
@@ -56,13 +57,15 @@
 		}
 
 		&-contact {
+			@include flex(column);
+
 			a {
 				text-decoration: none;
 				color: $whiteColor;
 			}
 
 			&-container {
-				padding: 0.2em 0em;
+				padding: 0.5em 0em;
 				@include flex(row, center, flex-start);
 			}
 
