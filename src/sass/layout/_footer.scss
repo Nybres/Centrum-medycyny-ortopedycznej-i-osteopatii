@@ -18,6 +18,9 @@
 	&__info {
 		margin-bottom: 1.5em;
 		border-bottom: 1px solid $whiteColor;
+		@include md {
+			margin-bottom: 3em;
+		}
 		&-box-socials {
 			@include flex(row, center, flex-start);
 			margin-bottom: 0.5em;
@@ -35,14 +38,29 @@
 		@include flex(column);
 		width: 100%;
 
+		@include md {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
 		&-links {
 			@include flex(column);
 			font-size: $smallestFont;
 			list-style: none;
 			margin-bottom: 1em;
+			@include md {
+				margin: 0em;
+			}
+
 			a {
 				text-decoration: none;
 				color: $whiteColor;
+				transition: color 0.3s ease;
+			}
+
+			a:hover {
+				color: $greenColor;
 			}
 		}
 
@@ -62,6 +80,11 @@
 			a {
 				text-decoration: none;
 				color: $whiteColor;
+				transition: color 0.3s ease;
+			}
+
+			a:hover {
+				color: $greenColor;
 			}
 
 			&-container {
@@ -77,6 +100,9 @@
 
 		&-fb {
 			margin-top: 2em;
+			@include md {
+				margin: 0em;
+			}
 		}
 	}
 }
