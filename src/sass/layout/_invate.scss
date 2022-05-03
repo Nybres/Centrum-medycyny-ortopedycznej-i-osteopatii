@@ -19,6 +19,10 @@
 		@include xl {
 			padding-bottom: 12em;
 		}
+
+		@include xxl {
+			padding-bottom: 18em;
+		}
 	}
 
 	&__card-image {
