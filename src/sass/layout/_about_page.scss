@@ -136,7 +136,7 @@
 		grid-gap: 0.8em;
 		margin: 2.8em 0em;
 
-		@include md {
+		@include xl {
 			grid-template-columns: repeat(5, 1fr);
 			grid-template-rows: repeat(2, 1fr);
 		}
@@ -154,11 +154,11 @@
 		}
 
 		@include lg {
-			height: 280px;
+			height: 260px;
 		}
 
 		@include xl {
-			height: 300px;
+			height: 240px;
 		}
 	}
 }
@@ -172,6 +172,23 @@
 		@include flex(column);
 		margin-top: 2em;
 		padding-bottom: 6em;
+
+		@include md {
+			flex-wrap: wrap;
+			flex-direction: row;
+		}
+
+		@include lg {
+			padding-bottom: 10em;
+		}
+
+		@include xl {
+			padding-bottom: 12em;
+		}
+
+		@include xxl {
+			padding-bottom: 18em;
+		}
 	}
 
 	&__card {
@@ -179,11 +196,23 @@
 		box-shadow: rgb(237 238 239) 0px 0px 10px 4px;
 		margin-bottom: 2em;
 
+		@include md {
+			width: calc(50% - 2em);
+			margin: 1em;
+		}
+
+		@include lg {
+			width: calc(33.33% - 2em);
+		}
+
 		&-body {
 			padding: 2em;
 			display: flex;
 			flex-direction: column;
 			height: 100%;
+			@include lg {
+				padding: 2.2em;
+			}
 		}
 
 		&-head {
@@ -197,16 +226,24 @@
 			color: $greenColor;
 			font-size: 1.2rem;
 			font-weight: 500;
+
+			@include xl {
+				font-size: 1.3rem;
+			}
 		}
 
 		&-paragraph {
 			color: $greyTextColor;
 			font-size: $smallestFont;
+
+			@include xxl {
+				font-size: 1.1rem;
+			}
 		}
 
 		&-icon {
 			fill: $blueColor;
-			height: 50px;
+			height: 36px;
 		}
 	}
 }
