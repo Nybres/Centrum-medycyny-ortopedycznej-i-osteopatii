@@ -46,6 +46,10 @@
 				@include lg {
 					margin-top: 8em;
 				}
+
+				@include xl {
+					margin-top: 12em;
+				}
 			}
 		}
 	}
@@ -127,6 +131,9 @@
 	padding: 0em 2em;
 	@include md {
 		padding: 4em 2em;
+	}
+	@include xl {
+		padding: 6em 2em;
 	}
 
 	&__container {
