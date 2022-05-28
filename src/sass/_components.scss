@@ -121,6 +121,10 @@
 		font-weight: 500;
 		margin-bottom: 0.8em;
 
+		&--white{
+			color: $blueColor;
+		}
+
 		@include md {
 			font-size: $mediumFont;
 		}
@@ -136,6 +140,10 @@
 		color: $whiteColor;
 		margin-bottom: 1.5em;
 		text-align: center;
+
+		&--white{
+			color: $greyTextColor
+		}
 
 		@include md {
 			font-size: 1.4rem;
@@ -155,14 +163,14 @@
 		@include flex();
 		height: 100%;
 		font-family: $secondaryFont;
-		font-size: $mediumFont;
+		font-size: $mediumestFont;
 		font-weight: 600;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: $whiteColor;
 
 		@include md {
-			font-size: 2.6rem;
+			font-size: $largeFont;
 		}
 	}
 }

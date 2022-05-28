@@ -1,0 +1,112 @@
+@use "../utilities/index" as *;
+
+.service {
+	position: relative;
+	padding: 3em 2em;
+	@include lg {
+		padding: 6em 2em;
+	}
+
+	@include xl {
+		padding: 8em 2em;
+	}
+
+	&__container {
+		margin-top: 2em;
+        @include lg{
+            margin-top: 3em;
+        }
+
+        @include xl{
+            margin-top: 4em;
+        }
+	}
+
+	&__block {
+		@include flex(column);
+
+        @include lg{
+            flex-direction: row;
+        }
+
+        @include xl{
+            align-items: flex-start;
+        }
+
+        &-text{
+            @include lg{
+                width: 55%;
+                margin-right: 4em;
+
+                &--full{
+                    width: 100%;
+                }
+            }
+        }
+
+		&-paragraph {
+			font-size: $smallestFont;
+			color: $greyTextColor;
+			padding-bottom: 1em;
+
+            @include lg{
+                font-size: 1.1rem;
+            }
+
+            @include xl{
+                font-size: 1.2rem;
+            }
+		}
+
+		&-title {
+			font-family: $secondaryFont;
+            font-size: 1.2rem;
+			color: $greenColor;
+            font-weight: 600;
+            margin: 1.4em 0em 1.2em 0em;
+
+            @include lg{
+                font-size: 1.3rem;
+            }
+
+            @include xl{
+                font-size: 1.4rem;
+            }
+		}
+
+		&-img {
+			width: 100%;
+            height: 230px;
+            object-fit: cover;
+            object-position: center;
+			overflow: hidden;
+            border-radius: 0.5em;
+
+            @include lg{
+                width: 45%;
+                height: 100%;
+            }
+
+            @include xl{
+                height: 330px;
+            }
+		}
+	}
+}
+
+.call{
+    position: relative;
+    padding: 4em 2em 12em 2em;
+
+    @include lg {
+        padding-bottom: 14em;
+    }
+
+    @include xl {
+        padding-bottom: 16em;
+    }
+
+    @include xxl {
+        padding-bottom: 22em;
+    }
+}
