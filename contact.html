@@ -28,7 +28,7 @@
                     </li>
                     <li class="navbar__menu-item">
                         <div class="navbar__sub-box">
-                            <a href="./index.html#offert" class="navbar__link">Usługi</a>
+                            <div class="navbar__link">Usługi</div>
                             <svg class="navbar__link-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                 viewBox="0 0 24 24">
                                 <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
@@ -39,19 +39,19 @@
                                 <a href="./terapia-manualna.html" class="navbar__link">Terapia manualna</a>
                             </li>
                             <li class="navbar__sub-item">
-                                <a href="#" class="navbar__link">Akupunktura</a>
+                                <a href="./terapia-manualna.html" class="navbar__link">Akupunktura</a>
                             </li>
                             <li class="navbar__sub-item">
-                                <a href="#" class="navbar__link">Rehabilitacja pourazowa</a>
+                                <a href="./terapia-manualna.html" class="navbar__link">Rehabilitacja pourazowa</a>
                             </li>
                             <li class="navbar__sub-item">
-                                <a href="#" class="navbar__link">Terapia narzędziowa</a>
+                                <a href="./terapia-manualna.html" class="navbar__link">Terapia narzędziowa</a>
                             </li>
                             <li class="navbar__sub-item">
-                                <a href="#" class="navbar__link">Osteopatia</a>
+                                <a href="./terapia-manualna.html" class="navbar__link">Osteopatia</a>
                             </li>
                             <li class="navbar__sub-item">
-                                <a href="#" class="navbar__link">Kobido</a>
+                                <a href="./terapia-manualna.html" class="navbar__link">Kobido</a>
                             </li>
                         </ul>
                     </li>
@@ -110,7 +110,7 @@
                     <p class="title__second">Umów się na wizytę już dziś!</p>
                 </div>
                 <div class="contact__boxes">
-                    <div class="contact__box">
+                    <div data-aos="fade-right" data-aos-delay="300" class="contact__box">
                         <div class="contact__info">
                             <p class="contact__info-name">
                                 Radosław Meller
@@ -164,7 +164,7 @@
                     </div>
 
 
-                    <div class="contact__box">
+                    <div data-aos="fade-left" data-aos-delay="400" class="contact__box">
                         <div class="contact__info">
                             <p class="contact__info-name">
                                 Aleksandra Leszczyńska
@@ -358,6 +358,17 @@
     <script src="./dist/js/main.min.js"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v13.0"
         nonce="iCpVtlQt"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+    AOS.init({
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 3, // values from 0 to 3000, with step 50ms
+        duration: 800, // values from 0 to 3000, with step 50ms
+    });
+</script>
 </body>
 
 </html>
