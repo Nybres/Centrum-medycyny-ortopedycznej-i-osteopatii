@@ -3,6 +3,7 @@
 .contact {
 	position: relative;
 	padding: 3em 2em;
+	overflow-x: hidden;
 	@include lg {
 		padding: 6em 2em;
 	}
