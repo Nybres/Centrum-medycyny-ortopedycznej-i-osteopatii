@@ -51,6 +51,7 @@
 		width: 100%;
 		margin-bottom: 1.5em;
 		max-height: 350px;
+		object-fit: cover;
 		@include md {
 			margin: 0;
 		}

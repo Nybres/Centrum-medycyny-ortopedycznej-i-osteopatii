@@ -15,6 +15,10 @@
 
 	&__logo {
 		z-index: 80;
+
+		img {
+			height: 60px;
+		}
 	}
 
 	&__navigation {
