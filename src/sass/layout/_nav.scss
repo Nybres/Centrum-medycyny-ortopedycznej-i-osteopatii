@@ -78,7 +78,9 @@
 			align-items: center;
 			width: auto;
 			border: none;
-			padding: 0.6em;
+			// padding: 0.6em;
+			padding: 1em 0.6em;
+			cursor: pointer;
 		}
 	}
 
@@ -124,10 +126,10 @@
 		@include lg {
 			position: absolute;
 			top: 50px;
-			left: 2px;
+			left: 0px;
 			padding: 1em 1em;
 			box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
-			width: 250px;
+			width: 300px;
 			background-color: $whiteColor;
 		}
 
