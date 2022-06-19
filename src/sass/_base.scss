@@ -15,6 +15,10 @@ body {
 	scroll-behavior: smooth;
 }
 
+.active {
+	overflow: hidden;
+}
+
 main {
 	flex: 1;
 }
