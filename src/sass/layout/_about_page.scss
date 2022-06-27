@@ -56,6 +56,7 @@
 
 	&__person-text {
 		margin-bottom: 1em;
+		color: $greyTextColor;
 
 		@include md {
 			width: 50%;
@@ -242,6 +243,10 @@
 		&-paragraph {
 			color: $greyTextColor;
 			font-size: $smallestFont;
+
+			@include xl {
+				padding: 1em;
+			}
 
 			@include xxl {
 				font-size: 1.1rem;

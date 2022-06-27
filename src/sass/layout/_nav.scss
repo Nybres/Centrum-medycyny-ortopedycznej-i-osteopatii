@@ -167,6 +167,11 @@
 	&__social-box-icon {
 		margin: 0.2em 0.4em;
 		fill: $blueColor;
+		transition: transform 0.3s ease;
+
+		&:hover {
+			transform: scale(1.1);
+		}
 	}
 }
 

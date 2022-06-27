@@ -9,6 +9,11 @@
 	&__icon {
 		fill: $whiteColor;
 		margin: 0.5em;
+		transition: transform 0.3s ease;
+
+		&:hover {
+			transform: scale(1.1);
+		}
 	}
 
 	&__container {
