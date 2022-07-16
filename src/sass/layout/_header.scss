@@ -104,7 +104,7 @@
 		font-weight: 500;
 		text-transform: uppercase;
 		margin: 0.8em 0em;
-		line-height: 2rem;
+		line-height: 2.5rem;
 		text-align: center;
 		@include md {
 			text-align: left;
@@ -130,6 +130,7 @@
 		text-align: center;
 		color: $lightBlackColor;
 		margin-bottom: 1.2em;
+		line-height: 1.5rem;
 		@include md {
 			text-align: left;
 		}

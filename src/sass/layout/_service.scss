@@ -50,6 +50,10 @@
 			color: $greyTextColor;
 			padding-bottom: 1em;
 
+			&--bold {
+				font-weight: 700;
+			}
+
 			@include lg {
 				font-size: 1.1rem;
 			}
@@ -91,6 +95,48 @@
 			@include xl {
 				height: 330px;
 			}
+		}
+	}
+
+	&__list {
+		margin-left: 1em;
+		font-size: $smallestFont;
+
+		@include lg {
+			width: 50%;
+		}
+
+		&-container {
+			@include flex(column, flex-start, flex-start);
+			width: 100%;
+			@include md {
+				flex-direction: row;
+			}
+		}
+
+		&--gap {
+			margin-right: 1em;
+
+			@include md {
+				margin-right: 4em;
+			}
+		}
+
+		@include lg {
+			font-size: 1.1rem;
+		}
+
+		@include xl {
+			font-size: 1.2rem;
+		}
+
+		&-item,
+		::marker {
+			color: $blueColor;
+		}
+
+		&-item {
+			color: $greyTextColor;
 		}
 	}
 }
