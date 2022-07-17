@@ -123,13 +123,17 @@
 		padding: 0.5em 0em 0em 1em;
 		font-size: $smallestFont;
 
+		@include md {
+			columns: 2;
+		}
+
 		@include lg {
 			position: absolute;
 			top: 50px;
 			left: 0px;
-			padding: 1em 1em;
+			padding: 2em 2em;
 			box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
-			width: 300px;
+			width: 500px;
 			background-color: $whiteColor;
 		}
 
