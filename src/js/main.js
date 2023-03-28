@@ -8,8 +8,6 @@ const handleAccordion = e => {
       answer.classList.toggle("faq__answer--active");
       answerText.classList.toggle("faq__answer-text--active");
       icon.classList.toggle("faq__question-icon--active");
-
-      console.log(icon);
     });
   });
 };
@@ -21,6 +19,8 @@ const navigation = document.querySelector(".navbar__navigation");
 const subNavigation = document.querySelector(".navbar__navigation-submenu");
 const submenuBackArrow = document.querySelector(".navbar__submenu-back-arrow");
 const body = document.querySelector("body");
+const navMobileCtaBtn = document.querySelector(".navbar__contact-btn--mobile");
+const navSocialsBox = document.querySelector(".navbar__socials--mobile");
 
 const hideBody = params => {
   body.classList.toggle("body-hide");
@@ -29,16 +29,22 @@ const hideBody = params => {
 const handleNav = params => {
   navigation.classList.toggle("navbar__navigation--active");
   subNavigation.classList.remove("navbar__navigation-submenu--active");
+  navMobileCtaBtn.style.display = "block";
+  navSocialsBox.style.display = "block";
   hideBody();
 };
 
 const handleSubmenu = params => {
   subNavigation.classList.toggle("navbar__navigation-submenu--active");
+  navMobileCtaBtn.style.display = "none";
+  navSocialsBox.style.display = "none";
 };
 
 const handleBack = params => {
   handleSubmenu();
   hideBody();
+  navMobileCtaBtn.style.display = "block";
+  navSocialsBox.style.display = "block";
 };
 
 navBtn.addEventListener("click", handleNav);

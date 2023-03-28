@@ -1,259 +1,8 @@
 @use "../utilities/index" as *;
-
-// .navbar {
-//   position: sticky;
-//   top: 0;
-//   height: 80px;
-//   background-color: $whiteColor;
-//   padding: 1em;
-//   // box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
-//   border-bottom: 1px solid #f6f6f6;
-//   z-index: 4;
-//   @include lg {
-//     // background-color: transparent;
-//     // box-shadow: none;
-//   }
-
-//   &__logo {
-//     z-index: 80;
-
-//     img {
-//       height: 60px;
-//     }
-//   }
-
-//   &__navigation {
-//     @include flex(row, center, space-between);
-//     @include lg {
-//       justify-content: space-around;
-//     }
-//   }
-
-//   &__container {
-//     position: fixed;
-//     top: 0px;
-//     left: 0;
-//     right: 0;
-//     height: 100vh;
-//     transform: translate(200%);
-//     transition: transform 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
-//     z-index: 999;
-//     @include lg {
-//       position: relative;
-//       @include flex(row);
-//       transform: translate(0%);
-//       height: auto;
-//       width: 100%;
-//     }
-
-//     &--active {
-//       transform: translate(0%);
-//       top: 80px;
-//       background-color: $whiteColor;
-//       overflow-y: scroll;
-//       padding-top: 80px;
-//     }
-//   }
-
-//   &__menu {
-//     @include flex(column, center, flex-end);
-//     font-family: $secondaryFont;
-//     font-weight: 400;
-//     list-style: none;
-//     font-size: 1.1rem;
-//     margin-bottom: 1em;
-//     width: 100%;
-//     @include lg {
-//       flex-direction: row;
-//       margin: 0;
-//     }
-//   }
-
-//   &__menu-item {
-//     position: relative;
-//     @include flex(column, flex-start, flex-start);
-//     width: 60%;
-//     padding: 1em 0.2em;
-//     border-bottom: 1px solid $greenColor;
-//     @include lg {
-//       justify-content: space-around;
-//       align-items: center;
-//       width: auto;
-//       border: none;
-//       // padding: 0.6em;
-//       padding: 1em 0.6em;
-//       cursor: pointer;
-//     }
-//   }
-
-//   @include lg {
-//     &__menu-item:hover > &__sub-menu {
-//       height: auto;
-//       display: block;
-//     }
-//   }
-
-//   &__menu-item:nth-last-child(1) {
-//     border-bottom: none;
-//   }
-
-//   &__link {
-//     text-decoration: none;
-//     color: $lightBlackColor;
-//     padding: 0.2em;
-//     width: 100%;
-//     transition: color 0.3s ease;
-
-//     &:hover {
-//       color: $greenColor;
-//     }
-//   }
-
-//   &__link-icon {
-//     margin-left: 0.1em;
-//     fill: $lightBlackColor;
-//     transform: rotate(270deg);
-//   }
-
-//   &__sub-box {
-//     width: 100%;
-//     @include flex(row, center, space-between);
-//   }
-
-//   &__sub-menu {
-//     list-style: none;
-//     font-size: $smallestFont;
-//     transform: translateX(-100%);
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background-color: white;
-//     z-index: 20;
-
-//     transition: transform 0.3s ease-in-out;
-
-//     @include lg {
-//       position: absolute;
-//       top: 50px;
-//       left: 0px;
-//       background-color: $whiteColor;
-//     }
-
-//     &--active {
-//       transform: translateX(0%);
-//     }
-//   }
-
-//   &__sub-item {
-//     padding: 0.8em 0.8em;
-//     border-bottom: 1px solid $greenColor;
-//     width: 80%;
-//     margin: 0 auto;
-//     @include lg {
-//       padding: 0.4em 0.2em;
-//     }
-//   }
-
-//   &__box {
-//     @include flex(column);
-//     width: 60%;
-//     margin: 0 auto;
-//     gap: 12px;
-//     @include lg {
-//       flex-direction: row;
-//       justify-content: space-evenly;
-//       width: 70%;
-//     }
-//   }
-
-//   &__social-box {
-//     margin-top: 1.5em;
-//     @include flex(row);
-//     gap: 12px;
-//     cursor: pointer;
-//     @include lg {
-//       margin: 0;
-//     }
-//   }
-
-//   &__social-box-icon {
-//     margin: 0.2em 0.4em;
-//     fill: $blueColor;
-//     transition: transform 0.3s ease;
-
-//     &:hover {
-//       transform: scale(1.1);
-//     }
-//   }
-// }
-
-// //burger button
-
-// .burger-btn {
-//   padding: 1em;
-//   background: none;
-//   border: 1px solid transparent;
-//   cursor: pointer;
-//   z-index: 1000;
-
-//   @include lg {
-//     display: none;
-//   }
-
-//   &:focus {
-//     border: 1px solid rgba(255, 255, 255, 0.5);
-//     border-radius: 8px;
-//   }
-
-//   &__box {
-//     position: relative;
-//     height: 30px;
-//     width: 45px;
-//   }
-
-//   &__box-bars::after,
-//   &__box-bars::before {
-//     position: absolute;
-//     content: "";
-//     right: 0;
-//     background-color: $blackColor;
-//     height: 4px;
-//     width: 100%;
-//     transition: width 0.3s ease-in;
-//   }
-
-//   &__box-bars::after {
-//     width: 100%;
-//     top: 11px;
-//   }
-
-//   &__box-bars::before {
-//     bottom: 4px;
-//   }
-
-//   &__box-bars {
-//     height: 4px;
-//     width: 100%;
-//     background-color: $lightBlackColor;
-
-//     &--active {
-//       &::after {
-//         width: 75%;
-//       }
-
-//       &::before {
-//         width: 50%;
-//       }
-//     }
-//   }
-// }
-
 .navbar {
   position: relative;
   padding: 0px 16px;
-  //   background-color: royalblue;
+  border-bottom: 1px solid #f6f6f6;
 
   &__hamburger {
     position: relative;
@@ -283,11 +32,48 @@
   }
 
   &__socials {
-    display: none;
+    &--desktop {
+      display: none;
+    }
+
+    &--mobile {
+      position: absolute !important;
+      bottom: 8px;
+      left: 50%;
+      transform: translate(-50%, -8px);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+  }
+
+  &__social {
+    &-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    &-box-icon {
+      fill: $blueColor;
+    }
   }
 
   &__contact-btn {
-    display: none;
+    &--desktop {
+      display: none;
+    }
+
+    &--mobile {
+      position: absolute !important;
+      bottom: 42px;
+      left: 50%;
+      transform: translate(-50%, -42px);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
   }
 
   &__logo {
@@ -348,7 +134,7 @@
     }
 
     &-item {
-      width: 50%;
+      width: 90%;
     }
 
     &-link {
