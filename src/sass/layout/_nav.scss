@@ -113,7 +113,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 60px;
+    height: 70px;
   }
 
   &__navigation {
@@ -275,6 +275,7 @@
       overflow: unset;
       background-color: $whiteColor;
       height: unset;
+      border-radius: 0 0 10px 10px;
     }
   }
 }

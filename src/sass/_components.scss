@@ -18,48 +18,56 @@
   z-index: 2;
   text-decoration: none;
   overflow: hidden;
+  transition: background-color 0.3s ease-in-out;
 
   &--cta {
     font-size: 1.1rem;
+    &:hover {
+      background-color: $blueColor;
+    }
   }
 
   &--primary {
     font-weight: 500;
     font-size: 1rem;
     color: $whiteColor;
+
+    &:hover {
+      background-color: $blueColor;
+    }
   }
 
-  &::after,
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    display: block;
-    height: 100%;
-    width: 0;
-    // transition: width 10s ease-in;
-    background-color: rgba(3, 145, 187, 0.45);
-    z-index: -10;
-  }
+  // &::after,
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   display: block;
+  //   height: 100%;
+  //   width: 0;
+  //   // transition: width 10s ease-in;
+  //   background-color: rgba(3, 145, 187, 0.45);
+  //   z-index: -10;
+  // }
 
-  &::before {
-    left: 0;
-  }
+  // &::before {
+  //   left: 0;
+  // }
 
-  &::after {
-    right: 0;
-    transition: width 0.3s ease-in;
-  }
+  // &::after {
+  //   right: 0;
+  //   transition: width 0.3s ease-in;
+  // }
 
-  &:hover::before {
-    width: 100%;
-    transition: width 0.3s ease-in;
-  }
+  // &:hover::before {
+  //   width: 100%;
+  //   transition: width 0.3s ease-in;
+  // }
 
-  &:hover::after {
-    width: 100%;
-    background-color: transparent;
-  }
+  // &:hover::after {
+  //   width: 100%;
+  //   background-color: transparent;
+  // }
 }
 
 .title {

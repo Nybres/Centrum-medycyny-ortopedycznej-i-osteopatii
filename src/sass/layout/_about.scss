@@ -1,133 +1,241 @@
 @use "../utilities/index" as *;
 
 .about {
-	position: relative;
-	padding: 6em 2em;
-	// overflow: hidden;
-	// margin-top: 2em;
-	// background-color: gold;
+  position: relative;
+  padding: 6em 2em;
 
-	@include lg {
-		padding: 8em 2em;
-	}
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    @include md {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 42px;
+    }
+  }
 
-	&__container {
-		@include flex(column);
-		@include md {
-			flex-direction: row;
-		}
-	}
+  &__left {
+    &-text {
+      font-size: 14px;
+      line-height: 20px;
+      text-align: justify;
+      color: $greyTextColor;
+      margin-bottom: 14px;
+      @include md {
+        margin-bottom: 24px;
+      }
+      @include lg {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
 
-	&__box {
-		@include flex(column-reverse);
-		@include md {
-			flex-direction: column;
-			width: 55%;
-			margin-right: 1.5em;
-		}
-		@include lg {
-			width: 75%;
-		}
-		@include xxl {
-			margin-right: 2.5em;
-		}
-	}
+    &-boxes {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      @include sm {
+        flex-direction: row;
+      }
 
-	&__box-paragraph {
-		font-family: $primaryFont;
-		font-size: $smallestFont;
-		color: $greyTextColor;
-		text-align: justify;
-		margin-bottom: 1.5em;
-		line-height: 1.5rem;
+      @include md {
+        gap: 32px;
+      }
+    }
+    &-box {
+      box-shadow: 0 0 10px 4px #edeeef;
+      &-img {
+        height: auto;
+        width: 100%;
+        vertical-align: bottom;
+        border-radius: 5px;
+      }
+    }
 
-		@include xl {
-			font-size: 1.1rem;
-		}
-	}
+    @include md {
+      width: 60%;
+      max-width: 640px;
+    }
+  }
 
-	&__box-image {
-		overflow: hidden;
-		border-radius: 0.5em;
-		width: 100%;
-		margin-bottom: 1.5em;
-		max-height: 350px;
-		object-fit: cover;
-		@include md {
-			margin: 0;
-		}
-		@include lg {
-			max-height: 400px;
-		}
-	}
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 
-	&__cards {
-		@include flex();
-		flex-wrap: wrap;
-		align-self: stretch;
-		width: 100%;
-		overflow: hidden;
-		@include md {
-			width: 45%;
-		}
-		@include lg {
-			width: 35%;
-		}
-	}
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      //   background-color: $greenColor;
+      background-color: $blueColor;
+      border-radius: 5px;
 
-	&__card {
-		// background: $greenGradient;
-		background-image: $greenGradient,
-			url("../img/home_page/about_card_image.jpg");
-		background-position: 35% 85%;
-		width: calc(50% - 1em);
-		margin: 0.5em;
-		padding: 0em 1em;
-		border-radius: 0.5em;
+      @include lg {
+        width: 42px;
+        height: 42px;
+      }
+    }
 
-		@include md {
-			padding: 2em 1em;
-		}
+    &-text {
+      padding-top: 6px;
 
-		@include lg {
-			padding: 3em 1em;
-		}
+      &-title {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 28px;
+        @include lg {
+          font-size: 20px;
+          line-height: 34px;
+        }
+      }
 
-		@include xl {
-			margin: 1em;
-			width: calc(50% - 2em);
-		}
+      &-description {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: $lightBlackColor;
+      }
+    }
 
-		&-body {
-			// @include flex(column);
-			padding: 2em 0em;
-			text-align: center;
-		}
-
-		&-title {
-			color: $lightBlackColor;
-			font-size: $smallestFont;
-			margin-top: 0.5em;
-			min-height: 44px;
-			// text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
-
-			@include lg {
-				font-size: 1.1rem;
-				min-height: 48px;
-			}
-		}
-
-		&-icon {
-			fill: $whiteColor;
-			height: 64px;
-			width: 64px;
-		}
-
-		@include md {
-			&:nth-child(-n + 4) {
-				margin-top: 0em;
-				margin-bottom: 0em;
-			}
-		}
-	}
+    @include md {
+      justify-content: center;
+      width: 40%;
+    }
+  }
 }
+
+// .about {
+// 	position: relative;
+// 	padding: 6em 2em;
+// 	// overflow: hidden;
+// 	// margin-top: 2em;
+// 	// background-color: gold;
+
+// 	@include lg {
+// 		padding: 8em 2em;
+// 	}
+
+// 	&__container {
+// 		@include flex(column);
+// 		@include md {
+// 			flex-direction: row;
+// 		}
+// 	}
+
+// 	&__box {
+// 		@include flex(column-reverse);
+// 		@include md {
+// 			flex-direction: column;
+// 			width: 55%;
+// 			margin-right: 1.5em;
+// 		}
+// 		@include lg {
+// 			width: 75%;
+// 		}
+// 		@include xxl {
+// 			margin-right: 2.5em;
+// 		}
+// 	}
+
+// 	&__box-paragraph {
+// 		font-family: $primaryFont;
+// 		font-size: $smallestFont;
+// 		color: $greyTextColor;
+// 		text-align: justify;
+// 		margin-bottom: 1.5em;
+// 		line-height: 1.5rem;
+
+// 		@include xl {
+// 			font-size: 1.1rem;
+// 		}
+// 	}
+
+// 	&__box-image {
+// 		overflow: hidden;
+// 		border-radius: 0.5em;
+// 		width: 100%;
+// 		margin-bottom: 1.5em;
+// 		max-height: 350px;
+// 		object-fit: cover;
+// 		@include md {
+// 			margin: 0;
+// 		}
+// 		@include lg {
+// 			max-height: 400px;
+// 		}
+// 	}
+
+// 	&__cards {
+// 		@include flex();
+// 		flex-wrap: wrap;
+// 		align-self: stretch;
+// 		width: 100%;
+// 		overflow: hidden;
+// 		@include md {
+// 			width: 45%;
+// 		}
+// 		@include lg {
+// 			width: 35%;
+// 		}
+// 	}
+
+// 	&__card {
+// 		// background: $greenGradient;
+// 		background-image: $greenGradient,
+// 			url("../img/home_page/about_card_image.jpg");
+// 		background-position: 35% 85%;
+// 		width: calc(50% - 1em);
+// 		margin: 0.5em;
+// 		padding: 0em 1em;
+// 		border-radius: 0.5em;
+
+// 		@include md {
+// 			padding: 2em 1em;
+// 		}
+
+// 		@include lg {
+// 			padding: 3em 1em;
+// 		}
+
+// 		@include xl {
+// 			margin: 1em;
+// 			width: calc(50% - 2em);
+// 		}
+
+// 		&-body {
+// 			// @include flex(column);
+// 			padding: 2em 0em;
+// 			text-align: center;
+// 		}
+
+// 		&-title {
+// 			color: $lightBlackColor;
+// 			font-size: $smallestFont;
+// 			margin-top: 0.5em;
+// 			min-height: 44px;
+// 			// text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+
+// 			@include lg {
+// 				font-size: 1.1rem;
+// 				min-height: 48px;
+// 			}
+// 		}
+
+// 		&-icon {
+// 			fill: $whiteColor;
+// 			height: 64px;
+// 			width: 64px;
+// 		}
+
+// 		@include md {
+// 			&:nth-child(-n + 4) {
+// 				margin-top: 0em;
+// 				margin-bottom: 0em;
+// 			}
+// 		}
+// 	}
+// }
