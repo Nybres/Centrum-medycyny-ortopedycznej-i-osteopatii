@@ -42,7 +42,8 @@ const handleSubmenu = params => {
 
 const handleBack = params => {
   handleSubmenu();
-  hideBody();
+  // hideBody();
+  body.classList.add("body-hide");
   navMobileCtaBtn.style.display = "block";
   navSocialsBox.style.display = "block";
 };

@@ -9,6 +9,7 @@
     width: 28px;
     height: 20px;
     display: block;
+    cursor: pointer;
 
     &-line {
       position: absolute;
@@ -29,11 +30,22 @@
         bottom: 0;
       }
     }
+
+    @include md {
+      display: none;
+    }
   }
 
   &__socials {
     &--desktop {
       display: none;
+      @include md {
+        display: block;
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     &--mobile {
@@ -44,6 +56,10 @@
       width: 90%;
       max-width: 400px;
       text-align: center;
+
+      @include md {
+        display: none;
+      }
     }
   }
 
@@ -63,6 +79,9 @@
   &__contact-btn {
     &--desktop {
       display: none;
+      @include md {
+        display: block;
+      }
     }
 
     &--mobile {
@@ -73,6 +92,9 @@
       width: 90%;
       max-width: 400px;
       text-align: center;
+      @include md {
+        display: none;
+      }
     }
   }
 
@@ -109,6 +131,16 @@
       transform: translateX(0%);
     }
 
+    @include md {
+      position: relative;
+      top: unset;
+      left: unset;
+      right: unset;
+      bottom: unset;
+      transform: translateX(0%);
+      background-color: transparent;
+    }
+
     &-menu {
       height: 60%;
       list-style: none;
@@ -116,6 +148,10 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+
+      @include md {
+        flex-direction: row;
+      }
     }
 
     &-submenu {
@@ -131,10 +167,31 @@
       &--active {
         transform: translateX(0%);
       }
+      @include md {
+        transform: translateX(0%);
+        top: 53px;
+        z-index: 40;
+        width: 650px;
+        opacity: 0;
+        visibility: hidden;
+      }
     }
 
     &-item {
       width: 90%;
+
+      @include sm {
+        width: 60%;
+      }
+
+      @include md {
+        width: unset;
+      }
+    }
+
+    &-item:hover &-submenu {
+      opacity: 1;
+      visibility: visible;
     }
 
     &-link {
@@ -144,11 +201,29 @@
       font-size: 24px;
       display: block;
       font-weight: 600;
+      cursor: pointer;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: $blueColor;
+      }
+
+      @include md {
+        font-size: 16px;
+        padding: 12px 16px;
+      }
 
       &--flex {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include md {
+          padding: 20px 16px;
+          svg {
+            display: none;
+          }
+        }
       }
     }
   }
@@ -157,7 +232,7 @@
     padding: 16px;
     list-style: none;
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
 
     &-back {
       position: absolute;
@@ -170,9 +245,14 @@
       height: 60px;
       width: 200px;
       z-index: 20;
+
+      @include md {
+        display: none;
+      }
     }
     &-back-arrow {
       transform: rotate(180deg);
+      cursor: pointer;
     }
 
     &-link {
@@ -182,6 +262,19 @@
       font-size: 16px;
       display: block;
       font-weight: 500;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: $blueColor;
+      }
+    }
+
+    @include md {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      overflow: unset;
+      background-color: $whiteColor;
+      height: unset;
     }
   }
 }
