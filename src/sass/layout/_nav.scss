@@ -163,6 +163,7 @@
       background-color: white;
       transform: translateX(400%);
       transition: transform cubic-bezier(0.23, 1, 0.32, 1) 0.3s;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 
       &--active {
         transform: translateX(0%);
