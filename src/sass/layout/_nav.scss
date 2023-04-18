@@ -268,7 +268,7 @@
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
-      width: 8px;
+      width: 5px;
     }
 
     &::-webkit-scrollbar-track {
@@ -279,7 +279,7 @@
       background: $blueColor;
     }
     &::-moz-scrollbar {
-      width: 8px;
+      width: 5px;
     }
 
     &::-moz-scrollbar-track {

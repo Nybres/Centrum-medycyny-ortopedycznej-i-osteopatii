@@ -81,9 +81,11 @@
       color: $greyTextColor;
       font-size: $smallestFont;
       margin-bottom: 1em;
-      text-align: justify;
+      // text-align: justify;
       @include lg {
-        font-size: 1.1rem;
+        // font-size: 1.1rem;
+        font-size: 16px;
+        line-height: 26px;
       }
     }
 
