@@ -2,13 +2,9 @@
 .header {
   position: relative;
   overflow: hidden;
-  padding-top: 32px;
+  padding-top: 48px;
   background-color: #fbfbfb;
   z-index: 0;
-
-  @include sm {
-    padding-top: 48px;
-  }
 
   @include md {
     padding-top: 68px;
