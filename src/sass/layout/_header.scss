@@ -1,179 +1,31 @@
 @use "../utilities/index" as *;
-// .header {
-// 	position: relative;
-// 	padding: 4em 1em;
-// 	@include md {
-// 		padding: 6em 1em;
-// 	}
-// 	@include lg {
-// 		padding: 6em 2em;
-// 		&::after {
-// 			content: "";
-// 			position: absolute;
-// 			background-color: whitesmoke;
-// 			top: 0;
-// 			left: 0;
-// 			right: 0;
-// 			bottom: 0;
-// 			z-index: -1000;
-// 		}
-// 	}
-// 	@include xl {
-// 		padding: 8em 2em 0em 2em;
-// 		height: 60vh;
-// 		min-height: 550px;
-// 		max-height: 600px;
-// 	}
-
-// 	&__background {
-// 		position: absolute;
-// 		top: 0;
-// 		right: 0;
-// 		height: 100%;
-// 		width: 100%;
-// 		background-image: $greenGradient,
-// 			url("../img/home_page/header_image_mobile.jpg");
-// 		background-repeat: no-repeat;
-// 		background-size: cover;
-// 		z-index: -99;
-
-// 		@include lg {
-// 			width: 60%;
-// 			border-radius: 0px 0px 0px 800px;
-// 		}
-// 	}
-
-// 	&__container {
-// 		@include flex(column);
-// 		@include md {
-// 			flex-direction: row;
-// 		}
-// 	}
-
-// 	&__box-text {
-// 		order: 2;
-// 		padding-bottom: 2em;
-// 		@include flex(column);
-// 		@include md {
-// 			align-items: flex-start;
-// 			order: 0;
-// 			width: 50%;
-// 			padding-bottom: 0em;
-// 			padding: 0em 2em;
-// 		}
-// 		@include lg {
-// 			width: 45%;
-// 		}
-// 	}
-
-// 	&__box-image {
-// 		overflow: hidden;
-// 		@include flex();
-// 		@include md {
-// 			width: 50%;
-// 			padding: 0em 2em;
-// 		}
-// 		@include lg {
-// 			width: 30%;
-// 			justify-content: flex-end;
-// 			width: 55%;
-// 		}
-// 	}
-
-// 	&__box-image-persons {
-// 		height: 222px;
-// 		@include md {
-// 			position: absolute;
-// 			bottom: 0;
-// 			height: 333px;
-// 		}
-// 		@include lg {
-// 			height: 366px;
-// 		}
-// 		@include xl {
-// 			height: 422px;
-// 		}
-// 		@include xxl {
-// 			height: 444px;
-// 		}
-// 	}
-
-// 	&__tittle {
-// 		font-family: $secondaryFont;
-// 		font-size: $mediumestFont;
-// 		font-weight: 500;
-// 		text-transform: uppercase;
-// 		margin: 0.8em 0em;
-// 		line-height: 2.5rem;
-// 		text-align: center;
-// 		@include md {
-// 			text-align: left;
-// 		}
-// 		@include lg {
-// 			font-size: $mediumFont;
-// 		}
-// 		@include xxl {
-// 			font-size: 2.2rem;
-// 		}
-// 	}
-
-// 	&__highlight {
-// 		color: $whiteColor;
-// 		@include lg {
-// 			color: $blueColor;
-// 		}
-// 	}
-
-// 	&__paragraph {
-// 		font-family: $primaryFont;
-// 		font-size: $smallestFont;
-// 		text-align: center;
-// 		color: $lightBlackColor;
-// 		margin-bottom: 1.2em;
-// 		line-height: 1.5rem;
-// 		@include md {
-// 			text-align: left;
-// 		}
-// 		@include lg {
-// 			font-size: 1.1rem;
-// 			margin-bottom: 1.5em;
-// 		}
-// 		@include xxl {
-// 			font-size: 1.2rem;
-// 		}
-// 	}
-// }
-
 .header {
   position: relative;
   overflow: hidden;
   padding-top: 32px;
   background-color: #fbfbfb;
   z-index: 0;
-  // width: 60%;
-  // border-radius: 0 0 0 800px;
-  // background-image: linear-gradient(
-  //   120deg,
-  //   rgba(132, 250, 176, 0.95),
-  //   rgba(143, 211, 244, 0.65)
-  // );
 
   @include sm {
-    padding-top: 38px;
-  }
-
-  @include md {
     padding-top: 48px;
   }
 
+  @include md {
+    padding-top: 68px;
+  }
+
   @include lg {
-    padding-top: 58px;
+    padding-top: 88px;
   }
 
   &__inner {
     display: flex;
     flex-direction: column;
     gap: 46px;
+
+    @include md {
+      gap: 58px;
+    }
 
     @include lg {
       flex-direction: row;
@@ -185,12 +37,23 @@
   &__left {
     padding: 0px 16px;
 
+    &-content {
+      max-width: 500px;
+      margin: 0 auto;
+
+      @include xl {
+        max-width: unset;
+        margin: 0;
+      }
+    }
+
     &-title {
       text-transform: uppercase;
-      font-size: 20px;
-      line-height: 32px;
+      font-size: 30px;
+      line-height: 42px;
       font-weight: 700;
       color: #006785;
+      margin-bottom: 8px;
 
       @include sm {
         font-size: 34px;
@@ -204,7 +67,7 @@
     }
     &-subtitle {
       font-size: 18px;
-      line-height: 24px;
+      line-height: 28px;
       font-weight: 700;
       color: $lightBlackColor;
 
