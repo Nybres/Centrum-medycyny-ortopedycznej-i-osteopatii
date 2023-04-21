@@ -1,101 +1,63 @@
 @use "../utilities/index" as *;
 
 .gallery {
-	position: relative;
-	padding: 6em 2em;
+  position: relative;
+  padding: 6em 2em;
 
-	&__container {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(6, 1fr);
-		grid-gap: 0.8em;
-		margin: 2.8em 0em;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0.8em;
+    margin: 2.8em 0em;
 
-		@include md {
-			grid-template-columns: repeat(4, 1fr);
-			grid-template-rows: repeat(3, 1fr);
-		}
-	}
+    @media (min-width: 375px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-	&__image {
-		display: block;
-		width: 100%;
-		height: 180px;
-		border-radius: 0.5em;
-		object-fit: cover;
+    @include md {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 
-		@include md {
-			height: 240px;
-		}
+  &__image {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 0.5em;
+    width: 100%;
 
-		@include lg {
-			height: 280px;
-		}
+    @include xxl {
+      height: 340px;
+    }
+  }
 
-		@include xl {
-			height: 300px;
-		}
+  &__item {
+    &--3 {
+      display: none;
+      @include sm {
+        display: block;
+        grid-column: 1/3;
+      }
+      @include md {
+        grid-column: 3/5;
+      }
+    }
 
-		@include xxl {
-			height: 340px;
-		}
-	}
+    &--5 {
+      display: none;
 
-	&__item {
-		&--1 {
-			@include md {
-				grid-column: 1/2;
-			}
-		}
+      @include md {
+        display: block;
+        grid-column: 2/4;
+      }
+    }
 
-		&--2 {
-			@include md {
-				grid-column: 2/3;
-			}
-		}
-		&--3 {
-			grid-column: 1/3;
-			@include md {
-				grid-column: 3/5;
-			}
-		}
-
-		&--4 {
-			@include md {
-				grid-column: 1/2;
-			}
-		}
-
-		&--5 {
-			@include md {
-				grid-column: 2/4;
-			}
-		}
-
-		&--6 {
-			@include md {
-				grid-column: 4/5;
-			}
-		}
-
-		&--7 {
-			@include md {
-				grid-column: 1/3;
-			}
-		}
-
-		&--8 {
-			grid-column: 1/3;
-			@include md {
-				grid-column: 3/4;
-			}
-		}
-
-		&--9 {
-			grid-column: 1/3;
-			@include md {
-				grid-column: 4/5;
-			}
-		}
-	}
+    &--7 {
+      display: none;
+      @include sm {
+        display: block;
+        grid-column: 1/3;
+      }
+    }
+  }
 }
