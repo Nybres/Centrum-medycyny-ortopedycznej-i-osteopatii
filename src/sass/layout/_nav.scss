@@ -211,6 +211,10 @@
 
     &-item {
       width: 90%;
+      -webkit-tap-highlight-color: transparent;
+      &:focus {
+        outline: none;
+      }
 
       @include sm {
         width: 60%;
