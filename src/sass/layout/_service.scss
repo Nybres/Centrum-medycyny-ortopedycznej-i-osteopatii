@@ -28,8 +28,18 @@
 
     &-right {
       text-align: center;
+      img {
+        margin-top: 24px;
+      }
+
+      & img + img {
+        margin-top: 12px;
+      }
       @include md {
         flex: 0 0 300px;
+        img {
+          margin-top: 0;
+        }
       }
       @include lg {
         flex: 0 0 400px;
@@ -43,31 +53,7 @@
     }
   }
 
-  // &__left {
-  //   @include md {
-  //     flex: 0 0 calc(100% - 320px);
-  //   }
-  //   @include lg {
-  //     flex: 0 0 calc(100% - 420px);
-  //   }
-  // }
-
-  // &__right {
-  //   &-sticky {
-  //     @include md {
-  //       position: sticky;
-  //     }
-  //   }
-  //   @include md {
-  //     flex: 0 0 300px;
-  //   }
-  //   @include lg {
-  //     flex: 0 0 400px;
-  //   }
-  // }
-
   &__container {
-    // display: flex;
     margin-top: 2em;
 
     @include md {
@@ -95,7 +81,6 @@
 
     &-text {
       @include lg {
-        // width: 55%;
         margin-right: 4em;
 
         &--full {
