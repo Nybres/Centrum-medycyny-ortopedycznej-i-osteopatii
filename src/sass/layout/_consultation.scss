@@ -83,14 +83,10 @@
 
   &__left {
     &-text {
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 16px;
+      line-height: 24px;
       color: $greyTextColor;
       margin-bottom: 24px;
-      @include lg {
-        font-size: 16px;
-        line-height: 24px;
-      }
     }
   }
 
@@ -243,7 +239,7 @@
 
   &__accordion {
     border-bottom: 1px solid #d0d0d0;
-    padding: 18px 12px 18px;
+    padding: 24px 14px;
     transition: background-color 0.3s ease-in-out;
     &-header {
       display: flex;
@@ -281,5 +277,29 @@
 }
 .opinions {
   position: relative;
-  padding: 4em 2em;
+  padding: 4em 2em 12em;
+
+  &__carousel {
+    margin-top: 32px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    // background-color: #006785;
+    background-color: #144f60;
+    border-radius: 20px;
+    padding: 32px 48px;
+  }
+
+  &__right {
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+    &-person {
+      margin-top: 12px;
+      font-weight: 600;
+    }
+  }
 }
