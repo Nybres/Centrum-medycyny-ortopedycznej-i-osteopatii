@@ -4,6 +4,10 @@
   position: relative;
   padding: 4em 2em;
 
+  @include lg {
+    padding: 6em 2em;
+  }
+
   img {
     max-width: 100%;
     height: auto;
@@ -12,6 +16,25 @@
   &__box {
     &-left {
       flex: 0 0 100%;
+      @include md {
+        flex: 0 0 60%;
+      }
+    }
+
+    &-right {
+      @include md {
+        position: sticky;
+        top: 100px;
+        height: 100%;
+      }
+    }
+
+    @include md {
+      display: flex;
+      gap: 24px;
+    }
+    @include lg {
+      gap: 32px;
     }
   }
   &__box {
@@ -68,6 +91,10 @@
   padding: 4em 2em;
   background-color: #fbfbfb;
 
+  @include lg {
+    padding: 6em 2em;
+  }
+
   img {
     max-width: 100%;
     height: auto;
@@ -79,6 +106,9 @@
     font-weight: 600;
     text-align: center;
     margin-bottom: 32px;
+    @include lg {
+      margin-bottom: 42px;
+    }
   }
 
   &__left {
@@ -87,6 +117,20 @@
       line-height: 24px;
       color: $greyTextColor;
       margin-bottom: 24px;
+    }
+    @include md {
+      flex: 0 0 50%;
+    }
+  }
+
+  &__inner {
+    @include md {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    @include lg {
+      gap: 32px;
     }
   }
 
@@ -144,6 +188,12 @@
       border: 1px solid #b3b3b3;
       border-radius: 20px;
       overflow: hidden;
+      max-width: 600px;
+      margin: 0 auto;
+
+      @include xl {
+        max-width: 500px;
+      }
     }
   }
 
@@ -196,6 +246,10 @@
   position: relative;
   padding: 4em 2em;
   color: #404040;
+  @include lg {
+    padding: 6em 2em;
+  }
+
   img {
     max-width: 100%;
     height: auto;
@@ -204,6 +258,32 @@
     display: flex;
     flex-direction: column-reverse;
     gap: 42px;
+
+    @include md {
+      flex-direction: row;
+      gap: 24px;
+    }
+    @include lg {
+      gap: 48px;
+    }
+    @include xl {
+      gap: 92px;
+    }
+  }
+
+  &__right {
+    @include md {
+      flex: 0 0 60%;
+      max-width: 600px;
+    }
+  }
+
+  &__left {
+    @include md {
+      position: sticky;
+      top: 100px;
+      height: 100%;
+    }
   }
 
   &__title {
@@ -212,6 +292,9 @@
     font-weight: 600;
     text-align: center;
     margin-bottom: 32px;
+    @include lg {
+      margin-bottom: 42px;
+    }
   }
 
   &__icon {
@@ -278,6 +361,9 @@
 .opinions {
   position: relative;
   padding: 4em 2em 12em;
+  @include lg {
+    padding: 6em 2em 18em;
+  }
 
   &__carousel {
     margin-top: 32px;
@@ -287,16 +373,20 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
-    // background-color: #006785;
     background-color: #144f60;
     border-radius: 20px;
     padding: 32px 48px;
+    height: 100%;
   }
 
   &__right {
     font-size: 14px;
     line-height: 20px;
     color: white;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &-person {
       margin-top: 12px;
       font-weight: 600;
