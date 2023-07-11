@@ -52,12 +52,12 @@
       margin-bottom: 8px;
 
       @include sm {
-        font-size: 34px;
+        // font-size: 34px;
         line-height: 42px;
       }
 
       @include xl {
-        font-size: 38px;
+        font-size: 32px;
         line-height: 52px;
       }
     }
