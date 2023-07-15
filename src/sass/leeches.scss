@@ -185,4 +185,43 @@
   &__item + &__item {
     margin: 12px 0;
   }
+
+  q {
+    display: block;
+    margin: 12px 0;
+    font-weight: 600;
+  }
+
+  &__fulltext {
+    padding-bottom: 48px;
+  }
+
+  .mb24 {
+    margin-bottom: 24px;
+  }
+
+  &__special {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: baseline;
+    padding: 32px 0;
+    margin: 32px 0;
+    font-size: 16px;
+    line-height: 26px;
+    border-top: 1px solid #c1c1c1;
+
+    &-summary {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 0;
+      p {
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 32px;
+        font-weight: 600;
+        color: $greenColor;
+      }
+    }
+  }
 }
