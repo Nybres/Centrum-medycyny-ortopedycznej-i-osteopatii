@@ -5,6 +5,11 @@
   overflow-x: unset;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 body {
   font-size: 62.5%;
   font-family: "Open Sans", sans-serif;
@@ -12,7 +17,7 @@ body {
   flex-direction: column;
   margin: 0;
   min-height: 100vh;
-  scroll-behavior: smooth;
+
   overflow-x: hidden;
 }
 
@@ -26,4 +31,8 @@ main {
 
 .body-hide {
   overflow: hidden;
+}
+
+img {
+  border-radius: 5px;
 }
