@@ -221,4 +221,94 @@
       }
     }
   }
+
+  &__container {
+    display: flex;
+    gap: 48px;
+    padding-top: 32px;
+    flex-direction: column;
+    @include md {
+      flex-direction: row;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    @include md {
+      width: calc(50% - 24px);
+    }
+  }
+
+  &__profit {
+    position: relative;
+    // border-bottom: 1px solid #c1c1c1;
+
+    &-head {
+      background-color: #0391bb;
+      padding: 12px;
+      color: white;
+      font-size: 16px;
+      line-height: 26px;
+      border-radius: 5px;
+      margin-bottom: 12px;
+    }
+
+    &-list {
+      padding-left: 32px;
+      max-height: 150px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+
+      &--show {
+        margin-bottom: 64px;
+      }
+    }
+
+    &-item {
+      font-size: 16px;
+      line-height: 26px;
+      padding: 4px 0;
+      color: #686868;
+    }
+
+    &-overlay {
+      background: linear-gradient(0deg, #ffffff, hsl(0deg 0% 100% / 80%));
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 60px;
+      opacity: 1;
+
+      &--show {
+        opacity: 0;
+
+        + button {
+          bottom: -32px;
+        }
+      }
+    }
+
+    &-btn {
+      position: absolute;
+      bottom: 0;
+      background: none;
+      outline: none;
+      border: none;
+      left: 32px;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 24px;
+      color: #6ea324;
+      transition: color 0.3s ease-in;
+
+      &:hover {
+        color: #0391bb;
+      }
+    }
+  }
+
+  &__profit + &__profit {
+    margin-top: 40px;
+  }
 }

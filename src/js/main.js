@@ -73,6 +73,36 @@ if (accordions) {
 }
 
 //
+const profitListElements = document.querySelectorAll(".leeaches__profit");
+
+const handleShow = element => {
+  const profitList = element.querySelector(".leeaches__profit-list");
+  const overlay = element.querySelector(".leeaches__profit-overlay");
+  const profitBtn = element.querySelector(".leeaches__profit-btn");
+
+  if (profitList.classList.contains("leeaches__profit-list--show")) {
+    profitList.classList.remove("leeaches__profit-list--show");
+    overlay.classList.remove("leeaches__profit-overlay--show");
+    profitList.style.maxHeight = "";
+    profitBtn.textContent = "Zobacz więcej";
+  } else {
+    profitList.classList.add("leeaches__profit-list--show");
+    overlay.classList.add("leeaches__profit-overlay--show");
+    profitList.style.maxHeight = profitList.scrollHeight + "px";
+    profitBtn.textContent = "Zwiń";
+  }
+};
+
+if (profitListElements) {
+  profitListElements.forEach(element => {
+    const profitBtn = element.querySelector(".leeaches__profit-btn");
+    profitBtn.addEventListener("click", e => {
+      handleShow(element);
+    });
+  });
+}
+
+//
 let slideUp = (target, duration = 300) => {
   target.style.transitionProperty = "height, margin, padding";
   target.style.transitionDuration = duration + "ms";
