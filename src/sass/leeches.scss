@@ -175,6 +175,11 @@
       line-height: 34px;
       color: #6ea324;
       margin-bottom: 12px;
+
+      &--black {
+        color: #404040;
+        margin: 0;
+      }
     }
 
     &-desc {
@@ -206,12 +211,19 @@
     margin-bottom: 24px;
   }
 
+  .mt24 {
+    margin-top: 24px;
+  }
+
+  .tc {
+    text-align: center;
+  }
+
   &__special {
     padding: 32px 0;
     margin: 32px 0;
     font-size: 16px;
     line-height: 26px;
-    border-top: 1px solid #c1c1c1;
 
     &-summary {
       display: flex;
@@ -318,5 +330,23 @@
 
   &__profit + &__profit {
     margin-top: 40px;
+  }
+
+  &__contraindications {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 24px;
+
+    &-box {
+      border-bottom: 1px solid #c1c1c1;
+      padding-bottom: 24px;
+    }
+    &-desc {
+      font-size: 16px;
+      line-height: 26px;
+      color: #404040;
+      text-align: center;
+      margin-bottom: 24px;
+    }
   }
 }
