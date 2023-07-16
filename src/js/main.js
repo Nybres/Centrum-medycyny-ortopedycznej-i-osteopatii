@@ -96,9 +96,11 @@ const handleShow = element => {
 if (profitListElements) {
   profitListElements.forEach(element => {
     const profitBtn = element.querySelector(".leeaches__profit-btn");
-    profitBtn.addEventListener("click", e => {
-      handleShow(element);
-    });
+    if (profitBtn) {
+      profitBtn.addEventListener("click", e => {
+        handleShow(element);
+      });
+    }
   });
 }
 
